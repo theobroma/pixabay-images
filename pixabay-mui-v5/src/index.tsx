@@ -1,12 +1,13 @@
 import './wdyr'; // <--- first import
 import { StrictMode } from 'react';
-import { Provider } from 'react-redux';
 import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+
+import { AppContainer } from './routes/AppContainer';
+import * as serviceWorker from './serviceWorker';
 import { store } from './store/configureStore';
 import AppThemeProvider from './themes/theme';
-import { AppContainer } from './routes/AppContainer';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
 
 // Open Source fonts
 import '@fontsource/roboto/300.css';

@@ -1,7 +1,7 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { pictureAPI } from '@/api/picture-api';
 import { PicturesDataResponseType } from '@/types';
 import { waitForMe } from '@/utils/waitforme';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const picturesInitialState = {
   data: {

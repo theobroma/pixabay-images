@@ -1,7 +1,9 @@
 // example - https://github.com/theobroma/rtk-query-toptal-example/blob/41ea72e4ad62ff6ec4a1e2a8f84b17301f7577e0/src/shared/redux/store.ts
-import { combineReducers, configureStore, Reducer } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { createLogger } from 'redux-logger';
+
+import { combineReducers, configureStore, Reducer } from '@reduxjs/toolkit';
+
 import { picturesApi } from './pictures/api';
 import { picturesReducer, picturesSlice } from './pictures/slice';
 import { uiReducer, uiSlice } from './ui/slice';

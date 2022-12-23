@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['airbnb-typescript-prettier'],
-  plugins: ['no-relative-import-paths'],
+  plugins: ['no-relative-import-paths', 'eslint-plugin-import-helpers'],
   parserOptions: {
     project: './tsconfig.json',
     sourceType: 'module',
@@ -28,11 +28,21 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 0,
     // prettier-ignore
     'camelcase': 0,
+    'import-helpers/order-imports': [
+      'error',
+      {
+        newlinesBetween: 'always', // new line between groups
+        groups: ['module', '/^@/', ['parent', 'sibling', 'index']],
+        alphabetize: { order: 'asc', ignoreCase: true },
+      },
+    ],
     'import/no-default-export': 'warn',
     'import/no-unresolved': 'error',
     'import/prefer-default-export': 0,
+
     'jsx-a11y/control-has-associated-label': 0,
     'jsx-a11y/label-has-associated-control': 0,
+
     'no-console': 0,
     'no-param-reassign': 0,
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
