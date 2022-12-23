@@ -33,9 +33,9 @@
     "zod": "^3.20.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,yml,json,css,scss,md}",
     "lint": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
@@ -62,6 +62,8 @@
     "eslint": "^8.x",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "netlify-cli": "^12.x",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "react-app-rewire-alias": "^1.1.7",
+    "react-app-rewired": "^2.2.1"
   }
 }
