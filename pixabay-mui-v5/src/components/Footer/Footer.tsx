@@ -4,7 +4,6 @@ import AppBar from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import React from 'react';
 
 const Footer = () => {
   return (
