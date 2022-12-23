@@ -1,5 +1,5 @@
 {
-  "name": "cryptoverse-mui-v5",
+  "name": "pixabay-mui-v5",
   "version": "0.1.0",
   "private": false,
   "license": "ISC",
@@ -61,6 +61,7 @@
   "devDependencies": {
     "eslint": "^8.x",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
+    "eslint-plugin-no-relative-import-paths": "^1.5.2",
     "netlify-cli": "^12.x",
     "prettier": "^2.8.1",
     "react-app-rewire-alias": "^1.1.7",
