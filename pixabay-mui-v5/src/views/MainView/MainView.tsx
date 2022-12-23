@@ -4,11 +4,11 @@ import Box from '@mui/material/Box';
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import { useDispatch, useSelector } from 'react-redux';
-import ImageGallery from '../../@components/ImageGallery';
-import { useAppDispatch } from '../../@store/configureStore';
-import { useGetPicturesQuery } from '../../@store/pictures/api';
-import { picturesSelector } from '../../@store/pictures/selectors';
-import { getPicturesTC } from '../../@store/pictures/slice';
+import ImageGallery from '@/components/ImageGallery';
+import { useAppDispatch } from '@/store/configureStore';
+import { useGetPicturesQuery } from '@/store/pictures/api';
+import { picturesSelector } from '@/store/pictures/selectors';
+import { getPicturesTC } from '@/store/pictures/slice';
 
 const MainView = () => {
   const dispatch = useAppDispatch();

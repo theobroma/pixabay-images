@@ -2,9 +2,9 @@ import './wdyr'; // <--- first import
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createRoot } from 'react-dom/client';
-import { store } from './@store/configureStore';
-import AppThemeProvider from './@themes/theme';
-import { AppContainer } from './@routes/AppContainer';
+import { store } from './store/configureStore';
+import AppThemeProvider from './themes/theme';
+import { AppContainer } from './routes/AppContainer';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
