@@ -32,7 +32,11 @@ module.exports = {
       'error',
       {
         newlinesBetween: 'always', // new line between groups
-        groups: ['module', '/^@/', ['parent', 'sibling', 'index']],
+        groups: [
+          'module',
+          '/^@/(api|components|hooks|pages|routes|store|themes|types|utils/)/',
+          ['parent', 'sibling', 'index'],
+        ],
         alphabetize: { order: 'asc', ignoreCase: true },
       },
     ],

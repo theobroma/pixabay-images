@@ -1,9 +1,9 @@
 // https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery
+import { BaseQueryFn } from '@reduxjs/toolkit/dist/query';
 import { AxiosError, AxiosRequestConfig } from 'axios';
 
 import { PicturesDataResponseSchema } from '@/types';
 import { waitForMe } from '@/utils/waitforme';
-import { BaseQueryFn } from '@reduxjs/toolkit/dist/query';
 
 import { pixabayAxiosInstance } from './api';
 

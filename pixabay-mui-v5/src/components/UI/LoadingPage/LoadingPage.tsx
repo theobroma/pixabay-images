@@ -1,6 +1,5 @@
-import * as React from 'react';
-
 import { Backdrop, CircularProgress } from '@mui/material';
+import * as React from 'react';
 
 export const LoadingPage: React.FC = () => {
   return (

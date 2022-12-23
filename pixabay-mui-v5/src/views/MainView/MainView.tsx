@@ -1,4 +1,6 @@
 // https://stackoverflow.com/questions/67909356/is-there-any-way-to-fetch-all-the-responses-stored-in-api-slice-rtk-query
+import { Container } from '@mui/material';
+import Box from '@mui/material/Box';
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,8 +10,6 @@ import { useAppDispatch } from '@/store/configureStore';
 import { useGetPicturesQuery } from '@/store/pictures/api';
 import { picturesSelector } from '@/store/pictures/selectors';
 import { getPicturesTC } from '@/store/pictures/slice';
-import { Container } from '@mui/material';
-import Box from '@mui/material/Box';
 
 const MainView = () => {
   const dispatch = useAppDispatch();
