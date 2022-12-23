@@ -57,4 +57,5 @@ const MainView = () => {
   );
 };
 
+// eslint-disable-next-line import/no-default-export
 export default MainView;

@@ -28,6 +28,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 0,
     // prettier-ignore
     'camelcase': 0,
+    'import/no-default-export': 'warn',
     'import/no-unresolved': 'error',
     'import/prefer-default-export': 0,
     'jsx-a11y/control-has-associated-label': 0,
