@@ -1,17 +1,6 @@
-const { alias } = require('react-app-rewire-alias');
+const { aliasWebpack, aliasJest } = require('react-app-alias');
 
-module.exports = function override(config) {
-  alias({
-    '@api': 'src/@api',
-    '@components': 'src/@components',
-    '@hooks': 'src/@hooks',
-    '@routes': 'src/@routes',
-    '@store': 'src/@store',
-    '@themes': 'src/@themes',
-    '@types': 'src/@types',
-    '@utils': 'src/@utils',
-    '@views': 'src/@views',
-  })(config);
+const options = {}; // default is empty for most cases
 
-  return config;
-};
+module.exports = aliasWebpack(options);
+module.exports.jest = aliasJest(options);

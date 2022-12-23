@@ -61,10 +61,12 @@
   "devDependencies": {
     "eslint": "^8.x",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-no-relative-import-paths": "^1.5.2",
     "netlify-cli": "^12.x",
     "prettier": "^2.8.1",
-    "react-app-rewire-alias": "^1.1.7",
+    "react-app-alias": "^2.2.2",
     "react-app-rewired": "^2.2.1"
   }
 }
