@@ -52,8 +52,10 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-props-no-spreading': 0,
     'react/prop-types': 0, // Since we do not use prop-types
+    'react/react-in-jsx-scope': 0, // Since React 18 "react-jsx"
     'react/require-default-props': 0, // Since we do not use prop-types
     'react/state-in-constructor': 0,
   },
