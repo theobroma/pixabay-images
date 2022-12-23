@@ -34,6 +34,7 @@ module.exports = {
         newlinesBetween: 'always', // new line between groups
         groups: [
           'module',
+          '/^@mui/',
           '/^@/(api|components|hooks|pages|routes|store|themes|types|utils/)/',
           ['parent', 'sibling', 'index'],
         ],
