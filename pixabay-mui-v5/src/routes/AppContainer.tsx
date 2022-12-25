@@ -11,19 +11,17 @@ const MainView = lazy(() =>
   pMinDelay(import('@/views/MainView/MainView'), MIN_LAZY_DELAY),
 );
 
-export const AppContainer = () => {
-  return (
-    <Suspense fallback={<PageLoader />}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<AppLayout />}>
-            <Route index element={<MainView />} />
-            {/* <Route path="cryptocurrencies" element={<MainView />} /> */}
-            {/* <Route path="exchanges" element={<div>exchanges</div>} /> */}
-            <Route path="*" element={<div>Not Found</div>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </Suspense>
-  );
-};
+export const AppContainer = () => (
+  <Suspense fallback={<PageLoader />}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<MainView />} />
+          {/* <Route path="cryptocurrencies" element={<MainView />} /> */}
+          {/* <Route path="exchanges" element={<div>exchanges</div>} /> */}
+          <Route path="*" element={<div>Not Found</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </Suspense>
+);
