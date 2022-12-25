@@ -1,6 +1,8 @@
 import pMinDelay from 'p-min-delay';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { PageLoader } from '@/atoms/page-loader/page-loader';
 
 const MIN_LAZY_DELAY = 300;
 
@@ -11,15 +13,17 @@ const MainView = lazy(() =>
 
 export const AppContainer = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AppLayout />}>
-          <Route index element={<MainView />} />
-          {/* <Route path="cryptocurrencies" element={<MainView />} /> */}
-          {/* <Route path="exchanges" element={<div>exchanges</div>} /> */}
-          <Route path="*" element={<div>Not Found</div>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Suspense fallback={<PageLoader />}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<MainView />} />
+            {/* <Route path="cryptocurrencies" element={<MainView />} /> */}
+            {/* <Route path="exchanges" element={<div>exchanges</div>} /> */}
+            <Route path="*" element={<div>Not Found</div>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   );
 };

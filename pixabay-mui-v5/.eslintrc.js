@@ -35,7 +35,7 @@ module.exports = {
         groups: [
           'module',
           '/^@mui/',
-          '/^@/(api|components|hooks|pages|routes|store|themes|types|utils/)/',
+          '/^@/(api|atoms|components|hooks|pages|routes|store|themes|types|utils/)/',
           ['parent', 'sibling', 'index'],
         ],
         alphabetize: { order: 'asc', ignoreCase: true },
