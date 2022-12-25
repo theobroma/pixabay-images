@@ -18,7 +18,7 @@ interface ListItemLinkProps {
   to: string;
 }
 
-const ListItemLink = (props: ListItemLinkProps) => {
+export const ListItemLink = (props: ListItemLinkProps) => {
   const { icon, primary, sx, to } = props;
 
   const renderLink = React.useMemo(
@@ -59,5 +59,3 @@ const ListItemLink = (props: ListItemLinkProps) => {
     </li>
   );
 };
-
-export default ListItemLink;

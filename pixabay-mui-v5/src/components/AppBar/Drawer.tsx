@@ -16,7 +16,7 @@ import BackToTop from '@/atoms/BackToTop';
 import HideOnScroll from '@/atoms/HideOnScroll';
 
 import { AppBar, DrawerHeader, drawerWidth, Main } from './Drawer.styled';
-import NestedList from './NestedList';
+import { NestedList } from './NestedList/NestedList';
 
 export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
   const theme = useTheme();
