@@ -10,6 +10,12 @@ const AppLayout = lazy(() => pMinDelay(import('./AppLayout'), MIN_LAZY_DELAY));
 const MainView = lazy(() =>
   pMinDelay(import('@/views/MainView/MainView'), MIN_LAZY_DELAY),
 );
+const SlicePage = lazy(() =>
+  pMinDelay(import('@/pages/slice/slice.page'), MIN_LAZY_DELAY),
+);
+const RTKQPage = lazy(() =>
+  pMinDelay(import('@/pages/rtkq/rtkq.page'), MIN_LAZY_DELAY),
+);
 
 export const AppContainer = () => (
   <Suspense fallback={<PageLoader />}>
@@ -17,8 +23,8 @@ export const AppContainer = () => (
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<MainView />} />
-          {/* <Route path="cryptocurrencies" element={<MainView />} /> */}
-          {/* <Route path="exchanges" element={<div>exchanges</div>} /> */}
+          <Route path="slice" element={<SlicePage />} />
+          <Route path="rtkq" element={<RTKQPage />} />
           <Route path="*" element={<div>Not Found</div>} />
         </Route>
       </Routes>
