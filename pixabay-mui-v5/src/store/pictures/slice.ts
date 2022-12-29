@@ -7,7 +7,7 @@ import {
 
 import { pictureAPI } from '@/api/picture-api';
 import type { RootState } from '@/store/configureStore';
-import { PicturesDataResponseType } from '@/types';
+import { PicturesDataResponseSchema, PicturesDataResponseType } from '@/types';
 import { waitForMe } from '@/utils/waitforme';
 
 const picturesInitialState = {
@@ -40,11 +40,11 @@ export const getPicturesTC = createAsyncThunk<
     );
 
     // ZOD validation
-    // try {
-    //   PicturesDataResponseSchema.parse(res.data);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      PicturesDataResponseSchema.parse(res.data);
+    } catch (error) {
+      console.log(error);
+    }
 
     return res.data;
   } catch (err: any) {

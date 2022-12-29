@@ -4,12 +4,14 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
-interface Props {
+import { SliceUtilsType } from '@/types';
+
+interface Props extends SliceUtilsType {
   //   hits: HitsEntityType[];
   hits: any;
 }
 
-const ImageGallery = ({ hits = [] }: Props) => {
+export const ImageGallery = ({ hits = [] }: Props) => {
   // console.log(hits);
   return (
     <ImageList
@@ -44,5 +46,3 @@ const ImageGallery = ({ hits = [] }: Props) => {
     </ImageList>
   );
 };
-
-export default ImageGallery;

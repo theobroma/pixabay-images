@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Container, Box } from '@mui/material';
 
+import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { picturesSelector } from '@/store/pictures/selectors';
 import { getPicturesTC } from '@/store/pictures/slice';
@@ -12,11 +13,10 @@ const SlicePage = () => {
   const {
     data: { hits },
     pictureSearch,
-    // error,
-    // isError,
-    // isFetching,
-    // isLoading,
-    // isSuccess,
+    error,
+    isError,
+    isLoading,
+    isSuccess,
   } = useAppSelector(picturesSelector);
 
   useEffect(() => {
@@ -27,6 +27,14 @@ const SlicePage = () => {
   return (
     <Container maxWidth="lg">
       <Box>SlicePage</Box>
+      <ImageGallery
+        hits={hits}
+        // isFetching={isFetching}
+        error={error}
+        isError={isError}
+        isLoading={isLoading}
+        isSuccess={isSuccess}
+      />
     </Container>
   );
 };
