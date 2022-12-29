@@ -17,6 +17,7 @@ import HideOnScroll from '@/atoms/HideOnScroll';
 
 import { AppBar, DrawerHeader, drawerWidth, Main } from './Drawer.styled';
 import { NestedList } from './NestedList/NestedList';
+import { ThemeMenu } from './ThemeMenu/ThemeMenu';
 
 export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
   const theme = useTheme();
@@ -55,6 +56,9 @@ export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
                 Pixabay Images
               </Typography>
             </RouterLink>
+            <Box sx={{ flexGrow: 1 }} />
+            {/* Theme Menu */}
+            <ThemeMenu />
           </Toolbar>
         </AppBar>
       </HideOnScroll>

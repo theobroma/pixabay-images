@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { PropsWithChildren } from 'react';
 
 import { red } from '@mui/material/colors';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -19,13 +19,9 @@ const theme = createTheme({
   },
 });
 
-const AppThemeProvider = ({ children }: { children?: React.ReactNode }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
-  );
-};
-
-export default AppThemeProvider;
+export const AppThemeProvider = ({ children }: PropsWithChildren) => (
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    {children}
+  </ThemeProvider>
+);

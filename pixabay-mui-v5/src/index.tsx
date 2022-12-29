@@ -3,10 +3,11 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
+import { SnackBarProvider } from './components/SnackBar/SnackBarProvider';
 import { AppContainer } from './routes/AppContainer';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store/configureStore';
-import AppThemeProvider from './themes/theme';
+import { AppThemeProvider } from './themes/theme';
 import './index.css';
 
 // Open Source fonts
@@ -21,7 +22,9 @@ root.render(
   <StrictMode>
     <Provider store={store}>
       <AppThemeProvider>
-        <AppContainer />
+        <SnackBarProvider>
+          <AppContainer />
+        </SnackBarProvider>
       </AppThemeProvider>
     </Provider>
   </StrictMode>,
