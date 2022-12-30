@@ -7,8 +7,8 @@ import { PageLoader } from '@/atoms/page-loader/page-loader';
 const MIN_LAZY_DELAY = 300;
 
 const AppLayout = lazy(() => pMinDelay(import('./AppLayout'), MIN_LAZY_DELAY));
-const MainView = lazy(() =>
-  pMinDelay(import('@/views/MainView/MainView'), MIN_LAZY_DELAY),
+const HomePage = lazy(() =>
+  pMinDelay(import('@/pages/home/home.page'), MIN_LAZY_DELAY),
 );
 const SlicePage = lazy(() =>
   pMinDelay(import('@/pages/slice/slice.page'), MIN_LAZY_DELAY),
@@ -22,7 +22,7 @@ export const AppContainer = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppLayout />}>
-          <Route index element={<MainView />} />
+          <Route index element={<HomePage />} />
           <Route path="slice" element={<SlicePage />} />
           <Route path="rtkq" element={<RTKQPage />} />
           <Route path="*" element={<div>Not Found</div>} />

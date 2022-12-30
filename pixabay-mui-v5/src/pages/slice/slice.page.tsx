@@ -5,26 +5,24 @@ import { Container, Grid, Typography } from '@mui/material';
 import { AppError } from '@/atoms/AppError/AppError';
 import { PageLoader } from '@/atoms/page-loader/page-loader';
 import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
+import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { picturesSelector } from '@/store/pictures/selectors';
 import { getPicturesTC } from '@/store/pictures/slice';
 
 const SlicePage = () => {
   const dispatch = useAppDispatch();
-  // const [page, setPage] = useState(1);
   const {
     data: { hits },
-    pictureSearch,
     error,
     isError,
     isLoading,
     // isSuccess,
   } = useAppSelector(picturesSelector);
 
-  useEffect(() => {
-    // setPage(1); // reset page
-    dispatch(getPicturesTC({ page: 1 })); // works also as initial fetch
-  }, [dispatch, pictureSearch]); // without page
+  useNonInitialEffect(() => {
+    dispatch(getPicturesTC({ page: 1 }));
+  }, [dispatch]);
 
   useEffect(() => {
     window.scrollTo({
