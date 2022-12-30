@@ -4,7 +4,7 @@ type Props = {
   error: any;
 };
 
-const AppError = ({ error }: Props) => {
+export const AppError = ({ error }: Props) => {
   let err = '';
 
   // console.log('typeof error', typeof error);
@@ -21,5 +21,3 @@ const AppError = ({ error }: Props) => {
     </Stack>
   );
 };
-
-export default AppError;

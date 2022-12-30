@@ -4,31 +4,20 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
-import { HitsEntityType, SliceUtilsType } from '@/types';
+import { HitsEntityType } from '@/types';
 
-interface Props extends SliceUtilsType {
+interface Props {
   hits: HitsEntityType[];
 }
 
-export const ImageGallery = ({
-  hits = [],
-  // isFetching,
-  error,
-  isError,
-  isLoading,
-  isSuccess,
-}: Props) => (
-  <ImageList
-    //  sx={{ width: 500, height: 450 }}
-    cols={5}
-    rowHeight={164}
-  >
+export const ImageGallery = ({ hits = [] }: Props) => (
+  <ImageList cols={5} rowHeight={164}>
     {hits.map((hit) => (
       <ImageListItem key={hit.id}>
         <img src={hit.webformatURL} alt={hit.tags} loading="lazy" />
         <ImageListItemBar
           title={hit.tags}
-          // subtitle={item.author}
+          subtitle={hit.user}
           actionIcon={
             <IconButton
               sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
