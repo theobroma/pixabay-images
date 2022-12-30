@@ -4,45 +4,43 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
-import { SliceUtilsType } from '@/types';
+import { HitsEntityType, SliceUtilsType } from '@/types';
 
 interface Props extends SliceUtilsType {
-  //   hits: HitsEntityType[];
-  hits: any;
+  hits: HitsEntityType[];
 }
 
-export const ImageGallery = ({ hits = [] }: Props) => {
-  // console.log(hits);
-  return (
-    <ImageList
-      //  sx={{ width: 500, height: 450 }}
-      cols={5}
-      rowHeight={164}
-    >
-      {hits.map((item: any) => (
-        <ImageListItem key={item.id}>
-          <img
-            // src={`${item.img}?w=248&fit=crop&auto=format`}
-            // srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            // alt={item.title}
-            src={item.webformatURL}
-            alt={item.tags}
-            loading="lazy"
-          />
-          <ImageListItemBar
-            title={item.tags}
-            // subtitle={item.author}
-            actionIcon={
-              <IconButton
-                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                aria-label={`info about ${item.title}`}
-              >
-                <InfoIcon />
-              </IconButton>
-            }
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
-  );
-};
+export const ImageGallery = ({
+  hits = [],
+  // isFetching,
+  error,
+  isError,
+  isLoading,
+  isSuccess,
+}: Props) => (
+  <ImageList
+    //  sx={{ width: 500, height: 450 }}
+    cols={5}
+    rowHeight={164}
+  >
+    {hits.map((hit) => (
+      <ImageListItem key={hit.id}>
+        <img src={hit.webformatURL} alt={hit.tags} loading="lazy" />
+        <ImageListItemBar
+          title={hit.tags}
+          // subtitle={item.author}
+          actionIcon={
+            <IconButton
+              sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+              aria-label="info about"
+              href={hit.pageURL}
+              target="_blank"
+            >
+              <InfoIcon />
+            </IconButton>
+          }
+        />
+      </ImageListItem>
+    ))}
+  </ImageList>
+);

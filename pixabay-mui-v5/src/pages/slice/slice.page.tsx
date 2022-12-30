@@ -24,6 +24,13 @@ const SlicePage = () => {
     dispatch(getPicturesTC({ page: 1 })); // works also as initial fetch
   }, [dispatch, pictureSearch]); // without page
 
+  useEffect(() => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  }, [hits]);
+
   return (
     <Container maxWidth="lg">
       <Box>SlicePage</Box>
