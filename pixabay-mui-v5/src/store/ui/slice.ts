@@ -16,5 +16,4 @@ export const uiSlice = createSlice({
   },
 });
 
-export const uiReducer = uiSlice.reducer;
 export const { setThemeAC } = uiSlice.actions;

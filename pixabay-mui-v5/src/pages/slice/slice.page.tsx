@@ -21,7 +21,9 @@ const SlicePage = () => {
   } = useAppSelector(picturesSelector);
 
   useNonInitialEffect(() => {
-    dispatch(getPicturesTC({ page: 1 }));
+    if (hits.length === 0) {
+      dispatch(getPicturesTC({ page: 1 }));
+    }
   }, [dispatch]);
 
   useEffect(() => {

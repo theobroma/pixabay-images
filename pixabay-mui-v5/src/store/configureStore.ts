@@ -5,7 +5,7 @@ import { createLogger } from 'redux-logger';
 
 import { picturesApi } from './pictures/api';
 import { picturesSlice } from './pictures/slice';
-import { uiReducer, uiSlice } from './ui/slice';
+import { uiSlice } from './ui/slice';
 // import { RESET_STATE_ACTION_TYPE } from './actions/resetState';
 
 const logger = createLogger({
@@ -16,7 +16,7 @@ const reducers = {
   //   [modalSlice.name]: modalReducer,
   [picturesSlice.name]: picturesSlice.reducer,
   // [picturesApi.reducerPath]: picturesApi.reducer,
-  [uiSlice.name]: uiReducer,
+  [uiSlice.name]: uiSlice.reducer,
 };
 
 const combinedReducer = combineReducers<typeof reducers>(reducers);
