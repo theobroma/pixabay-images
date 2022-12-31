@@ -4,8 +4,8 @@ import Fab from '@mui/material/Fab';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Zoom from '@mui/material/Zoom';
 
-const BackToTop = () => {
-  const trigger = useScrollTrigger();
+export const BackToTop = () => {
+  const canTrigger = useScrollTrigger();
 
   const handleClick = (event: any) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
@@ -21,7 +21,7 @@ const BackToTop = () => {
   };
 
   return (
-    <Zoom in={trigger}>
+    <Zoom in={canTrigger}>
       <Box
         onClick={handleClick}
         role="presentation"
@@ -34,5 +34,3 @@ const BackToTop = () => {
     </Zoom>
   );
 };
-
-export default BackToTop;

@@ -12,8 +12,8 @@ import { useTheme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import BackToTop from '@/atoms/BackToTop';
-import HideOnScroll from '@/atoms/HideOnScroll';
+import { BackToTop } from '@/atoms/BackToTop/BackToTop';
+import { HideOnScroll } from '@/atoms/HideOnScroll/HideOnScroll';
 
 import { AppBar, DrawerHeader, drawerWidth, Main } from './Drawer.styled';
 import { NestedList } from './NestedList/NestedList';
@@ -21,27 +21,27 @@ import { ThemeMenu } from './ThemeMenu/ThemeMenu';
 
 export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setIsOpen(true);
   };
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    setIsOpen(false);
   };
 
   return (
     <Box sx={{ display: 'flex' }} className="HolyGrail-content">
       <HideOnScroll>
-        <AppBar position="fixed" open={open}>
+        <AppBar position="fixed" open={isOpen}>
           <Toolbar>
             <IconButton
               color="inherit"
               aria-label="open drawer"
               onClick={handleDrawerOpen}
               edge="start"
-              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+              sx={{ mr: 2, ...(isOpen && { display: 'none' }) }}
             >
               <MenuIcon />
             </IconButton>
@@ -74,7 +74,7 @@ export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
         }}
         variant="persistent"
         anchor="left"
-        open={open}
+        open={isOpen}
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
@@ -88,7 +88,7 @@ export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
         <Divider />
         <NestedList />
       </Drawer>
-      <Main open={open}>
+      <Main open={isOpen}>
         {/* anchor for BackToTop */}
         <DrawerHeader id="back-to-top-anchor" />
         {children}
