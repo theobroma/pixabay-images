@@ -7,35 +7,13 @@ import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import { Box, IconButton, Menu, MenuItem } from '@mui/material';
 
-import { ColorEnum } from '@/enums/color.enum';
 import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { themeSelector } from '@/store/ui/selectors';
 import { setThemeAC } from '@/store/ui/slice';
-import { ThemeColorsEnum, ThemeOptionInterface } from '@/types';
+import { ThemeOptionInterface } from '@/types';
 
-export const themeOptions: ThemeOptionInterface[] = [
-  {
-    value: ThemeColorsEnum.LIGHT,
-    label: 'Light',
-    iconColor: ColorEnum.LightPrimaryMain,
-  },
-  {
-    value: ThemeColorsEnum.DARK,
-    label: 'Dark',
-    iconColor: ColorEnum.DarkPrimaryMain,
-  },
-  {
-    value: ThemeColorsEnum.DEEP_PURPLE_AMBER,
-    label: 'Deep Purple Amber',
-    iconColor: ColorEnum.DeepPurplePrimaryMain,
-  },
-  {
-    value: ThemeColorsEnum.PINK_BLUE_GREY_THEME,
-    label: 'Pink Blue Grey',
-    iconColor: ColorEnum.PinkBluePrimaryMain,
-  },
-];
+import { themeOptions } from './ThemeMenu.options';
 
 export const ThemeMenu = () => {
   const dispatch = useAppDispatch();
