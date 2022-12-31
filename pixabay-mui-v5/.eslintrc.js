@@ -26,6 +26,24 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 1,
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'variable',
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+      },
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['PascalCase'],
+        prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+      },
+      {
+        selector: 'enum',
+        format: ['PascalCase'],
+        suffix: ['Enum'],
+      },
+    ],
     // prettier-ignore
     'camelcase': 0,
     'import-helpers/order-imports': [

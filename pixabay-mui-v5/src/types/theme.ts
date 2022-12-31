@@ -1,4 +1,4 @@
-export enum THEME_COLORS {
+export enum ThemeColorsEnum {
   DARK = 'dark',
   LIGHT = 'light',
   DEEP_PURPLE_AMBER = 'deepPurpleAmber',
