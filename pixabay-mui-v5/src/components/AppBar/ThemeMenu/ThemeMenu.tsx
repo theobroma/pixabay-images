@@ -11,23 +11,35 @@ import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { themeSelector } from '@/store/ui/selectors';
 import { setThemeAC } from '@/store/ui/slice';
-import { ThemeColorsType } from '@/types';
+import { ThemeColorsEnum, BaseOptionInterface } from '@/types';
 
-const options = [
-  'light',
-  'dark',
-  'deepPurpleAmber',
-  'pinkBlueGrey',
-] as ThemeColorsType[];
+export const themeOptions: BaseOptionInterface<ThemeColorsEnum>[] = [
+  {
+    value: ThemeColorsEnum.LIGHT,
+    label: 'Light',
+  },
+  {
+    value: ThemeColorsEnum.DARK,
+    label: 'Dark',
+  },
+  {
+    value: ThemeColorsEnum.DEEP_PURPLE_AMBER,
+    label: 'Deep Purple Amber',
+  },
+  {
+    value: ThemeColorsEnum.PINK_BLUE_GREY_THEME,
+    label: 'Pink Blue Grey',
+  },
+];
 
 export const ThemeMenu = () => {
   const dispatch = useAppDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const currentTheme = useAppSelector(themeSelector);
-  const [selectedIndex, setSelectedIndex] = useState(
-    options.indexOf(currentTheme),
-  );
+  // const [selectedIndex, setSelectedIndex] = useState(
+  //   themeOptions.indexOf(currentTheme),
+  // );
 
   const isMenuOpen = Boolean(anchorEl);
   //   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -36,8 +48,8 @@ export const ThemeMenu = () => {
     event: React.MouseEvent<HTMLElement>,
     index: number,
   ) => {
-    setSelectedIndex(index);
-    dispatch(setThemeAC(options[index]));
+    // setSelectedIndex(index);
+    dispatch(setThemeAC(themeOptions[index]));
     setAnchorEl(null);
   };
 
@@ -77,14 +89,14 @@ export const ThemeMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      {options.map((option, index) => (
+      {themeOptions.map((option, index) => (
         <MenuItem
-          key={option}
+          key={option.value}
           // disabled={index === 0}
-          selected={index === selectedIndex}
+          // selected={index === selectedIndex}
           onClick={(event) => handleMenuItemClick(event, index)}
         >
-          {index === selectedIndex ? (
+          {/* {index === selectedIndex ? (
             <RadioButtonCheckedIcon
               fontSize="small"
               style={{ marginRight: '8px' }}
@@ -94,8 +106,12 @@ export const ThemeMenu = () => {
               fontSize="small"
               style={{ marginRight: '8px' }}
             />
-          )}
-          {option}
+          )} */}
+          <RadioButtonCheckedIcon
+            fontSize="small"
+            style={{ marginRight: '8px' }}
+          />
+          {option.label}
         </MenuItem>
       ))}
     </Menu>
