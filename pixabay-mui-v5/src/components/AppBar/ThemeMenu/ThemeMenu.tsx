@@ -7,49 +7,49 @@ import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import { Box, IconButton, Menu, MenuItem } from '@mui/material';
 
+import { ColorEnum } from '@/enums/color.enum';
 import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { themeSelector } from '@/store/ui/selectors';
 import { setThemeAC } from '@/store/ui/slice';
-import { ThemeColorsEnum, BaseOptionInterface } from '@/types';
+import { ThemeColorsEnum, ThemeOptionInterface } from '@/types';
 
-export const themeOptions: BaseOptionInterface<ThemeColorsEnum>[] = [
+export const themeOptions: ThemeOptionInterface[] = [
   {
     value: ThemeColorsEnum.LIGHT,
     label: 'Light',
+    iconColor: ColorEnum.LightPrimaryMain,
   },
   {
     value: ThemeColorsEnum.DARK,
     label: 'Dark',
+    iconColor: ColorEnum.DarkPrimaryMain,
   },
   {
     value: ThemeColorsEnum.DEEP_PURPLE_AMBER,
     label: 'Deep Purple Amber',
+    iconColor: ColorEnum.DeepPurplePrimaryMain,
   },
   {
     value: ThemeColorsEnum.PINK_BLUE_GREY_THEME,
     label: 'Pink Blue Grey',
+    iconColor: ColorEnum.PinkBluePrimaryMain,
   },
 ];
 
 export const ThemeMenu = () => {
   const dispatch = useAppDispatch();
   const { enqueueSnackbar } = useSnackbar();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const currentTheme = useAppSelector(themeSelector);
-  // const [selectedIndex, setSelectedIndex] = useState(
-  //   themeOptions.indexOf(currentTheme),
-  // );
 
   const isMenuOpen = Boolean(anchorEl);
-  //   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleMenuItemClick = (
     event: React.MouseEvent<HTMLElement>,
-    index: number,
+    value: ThemeOptionInterface['value'],
   ) => {
-    // setSelectedIndex(index);
-    dispatch(setThemeAC(themeOptions[index]));
+    dispatch(setThemeAC(value));
     setAnchorEl(null);
   };
 
@@ -57,13 +57,8 @@ export const ThemeMenu = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  //   const handleMobileMenuClose = () => {
-  //     setMobileMoreAnchorEl(null);
-  //   };
-
   const handleMenuClose = () => {
     setAnchorEl(null);
-    // handleMobileMenuClose();
   };
 
   useNonInitialEffect(() => {
@@ -89,28 +84,23 @@ export const ThemeMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      {themeOptions.map((option, index) => (
+      {themeOptions.map((option) => (
         <MenuItem
           key={option.value}
-          // disabled={index === 0}
-          // selected={index === selectedIndex}
-          onClick={(event) => handleMenuItemClick(event, index)}
+          selected={option.value === currentTheme}
+          onClick={(event) => handleMenuItemClick(event, option.value)}
         >
-          {/* {index === selectedIndex ? (
+          {option.value === currentTheme ? (
             <RadioButtonCheckedIcon
               fontSize="small"
-              style={{ marginRight: '8px' }}
+              style={{ marginRight: '8px', color: option.iconColor }}
             />
           ) : (
             <RadioButtonUncheckedIcon
               fontSize="small"
               style={{ marginRight: '8px' }}
             />
-          )} */}
-          <RadioButtonCheckedIcon
-            fontSize="small"
-            style={{ marginRight: '8px' }}
-          />
+          )}
           {option.label}
         </MenuItem>
       ))}
