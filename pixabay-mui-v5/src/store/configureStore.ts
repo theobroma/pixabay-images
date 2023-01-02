@@ -15,7 +15,7 @@ const logger = createLogger({
 const reducers = {
   //   [modalSlice.name]: modalReducer,
   [picturesSlice.name]: picturesSlice.reducer,
-  // [picturesApi.reducerPath]: picturesApi.reducer,
+  [picturesApi.reducerPath]: picturesApi.reducer,
   [uiSlice.name]: uiSlice.reducer,
 };
 
@@ -32,10 +32,7 @@ export const rootReducer: Reducer<RootState> = (state, action) => {
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([
-      logger,
-      //  picturesApi.middleware
-    ]),
+    getDefaultMiddleware().concat([logger, picturesApi.middleware]),
   // devTools: process.env.NODE_ENV === 'development',
   devTools: true,
 });
