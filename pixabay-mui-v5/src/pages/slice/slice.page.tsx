@@ -4,6 +4,7 @@ import { Container, Grid, Typography } from '@mui/material';
 
 import { AppError } from '@/atoms/AppError/AppError';
 import { PageLoader } from '@/atoms/page-loader/page-loader';
+import { AppSearch } from '@/components/AppSearch/AppSearch';
 import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
 import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
@@ -38,6 +39,7 @@ const SlicePage = () => {
       <Typography variant="h5" component="h2">
         Slice Version
       </Typography>
+      <AppSearch />
       {isLoading && <PageLoader />}
       {!!hits && <ImageGallery hits={hits} />}
       <Grid container spacing={2}>
