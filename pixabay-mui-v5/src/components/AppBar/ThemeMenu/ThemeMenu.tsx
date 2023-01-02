@@ -5,7 +5,7 @@ import * as React from 'react';
 import FormatColorFillIcon from '@mui/icons-material/FormatColorFill';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import { Box, IconButton, Menu, MenuItem } from '@mui/material';
+import { Box, IconButton, Menu, MenuItem, Tooltip } from '@mui/material';
 
 import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
@@ -87,17 +87,19 @@ export const ThemeMenu = () => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <IconButton
-        size="large"
-        edge="end"
-        aria-label="account of current user"
-        aria-controls={menuId}
-        aria-haspopup="true"
-        onClick={handleProfileMenuOpen}
-        color="inherit"
-      >
-        <FormatColorFillIcon />
-      </IconButton>
+      <Tooltip title="Select a theme">
+        <IconButton
+          size="large"
+          edge="end"
+          aria-label="account of current user"
+          aria-controls={menuId}
+          aria-haspopup="true"
+          onClick={handleProfileMenuOpen}
+          color="inherit"
+        >
+          <FormatColorFillIcon />
+        </IconButton>
+      </Tooltip>
       {renderMenu}
     </Box>
   );
