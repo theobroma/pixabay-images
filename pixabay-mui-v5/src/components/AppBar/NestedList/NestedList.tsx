@@ -8,7 +8,16 @@ import { ListItemLink } from './list-item-link/list-item-link';
 export const NestedList = () => (
   <List aria-label="primary routes">
     <ListItemLink to="/" primary="Home" icon={<HomeIcon />} />
-    <ListItemLink to="/slice" primary="Slice" icon={<LayersIcon />} />
+    <ListItemLink
+      to="/slice-load-more"
+      primary="Slice Load More"
+      icon={<LayersIcon />}
+    />
+    <ListItemLink
+      to="/slice-infinite-scroll"
+      primary="Slice Infinite Scroll"
+      icon={<LayersIcon />}
+    />
     <ListItemLink
       to="/rtkq"
       primary="RTK Query"

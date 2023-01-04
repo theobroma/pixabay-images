@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { picturesSelector } from '@/store/pictures/selectors';
 import { getPicturesTC } from '@/store/pictures/slice';
 
-export const SliceGallery = () => {
+export const SliceLoadMoreGallery = () => {
   const dispatch = useAppDispatch();
   const {
     data: { hits },

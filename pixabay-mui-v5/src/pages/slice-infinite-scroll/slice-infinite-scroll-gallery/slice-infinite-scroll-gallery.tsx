@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { picturesSelector } from '@/store/pictures/selectors';
 import { getPicturesTC } from '@/store/pictures/slice';
 
-export const InfiniteScrollGallery = () => {
+export const SliceInfiniteScrollGallery = () => {
   const dispatch = useAppDispatch();
   const [page, setPage] = useState(1);
   const {

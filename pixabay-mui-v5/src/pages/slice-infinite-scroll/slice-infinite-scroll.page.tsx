@@ -2,19 +2,17 @@ import { Container, Typography } from '@mui/material';
 
 import { AppSearch } from '@/components/AppSearch/AppSearch';
 
-import { InfiniteScrollGallery } from './infinite-scroll-gallery/infinite-scroll-gallery';
-// import { SliceGallery } from './slice-gallery/slice-gallery';
+import { SliceInfiniteScrollGallery } from './slice-infinite-scroll-gallery/slice-infinite-scroll-gallery';
 
-const SlicePage = () => (
+const SliceInfiniteScrollPage = () => (
   <Container maxWidth="lg">
     <Typography variant="h5" component="h2">
       Slice Version
     </Typography>
     <AppSearch />
-    {/* <SliceGallery /> */}
-    <InfiniteScrollGallery />
+    <SliceInfiniteScrollGallery />
   </Container>
 );
 
 // eslint-disable-next-line import/no-default-export
-export default SlicePage;
+export default SliceInfiniteScrollPage;
