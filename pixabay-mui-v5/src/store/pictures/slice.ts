@@ -17,7 +17,7 @@ const picturesInitialState = {
     hits: [],
   } as PicturesDataResponseType,
   // params
-  page: 1,
+  // page: 1,
   pictureSearch: 'nature',
   // utils
   isLoading: false,

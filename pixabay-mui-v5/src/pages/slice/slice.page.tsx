@@ -2,7 +2,8 @@ import { Container, Typography } from '@mui/material';
 
 import { AppSearch } from '@/components/AppSearch/AppSearch';
 
-import { SliceGallery } from './slice-gallery/slice-gallery';
+import { InfiniteScrollGallery } from './infinite-scroll-gallery/infinite-scroll-gallery';
+// import { SliceGallery } from './slice-gallery/slice-gallery';
 
 const SlicePage = () => (
   <Container maxWidth="lg">
@@ -10,7 +11,8 @@ const SlicePage = () => (
       Slice Version
     </Typography>
     <AppSearch />
-    <SliceGallery />
+    {/* <SliceGallery /> */}
+    <InfiniteScrollGallery />
   </Container>
 );
 
