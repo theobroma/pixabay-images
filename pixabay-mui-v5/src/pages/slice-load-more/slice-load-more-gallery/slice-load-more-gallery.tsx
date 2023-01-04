@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Grid } from '@mui/material';
+import { Box, Button, Grid } from '@mui/material';
 
 import { AppError } from '@/atoms/AppError/AppError';
 import { PageLoader } from '@/atoms/page-loader/page-loader';
@@ -12,6 +12,7 @@ import { getPicturesTC } from '@/store/pictures/slice';
 
 export const SliceLoadMoreGallery = () => {
   const dispatch = useAppDispatch();
+  const [page, setPage] = useState(1);
   const {
     data: { hits },
     error,
@@ -33,6 +34,18 @@ export const SliceLoadMoreGallery = () => {
     });
   }, [hits]);
 
+  const handleLoadMore = () => {
+    setPage((prev) => prev + 1);
+    dispatch(getPicturesTC({ page: page + 1 }));
+  };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  }, [hits]);
+
   return (
     <>
       {isLoading && <PageLoader />}
@@ -45,6 +58,16 @@ export const SliceLoadMoreGallery = () => {
           </Grid>
         )}
       </Grid>
+      <Box my={3} sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          variant="contained"
+          color="primary"
+          disabled={isLoading}
+          onClick={handleLoadMore}
+        >
+          Load more
+        </Button>
+      </Box>
     </>
   );
 };
