@@ -9,7 +9,11 @@ import {
   OutlinedInput,
 } from '@mui/material';
 
-export const AppSearch = () => {
+interface Props {
+  onEnterPress?: any;
+}
+
+export const AppSearch = ({ onEnterPress }: Props) => {
   const [searchVal, setSearchVal] = useState('');
 
   const handleChange = () => (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,9 +24,8 @@ export const AppSearch = () => {
   const handleKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const value = event.currentTarget.value.trim();
     if (event.key === 'Enter') {
-      //   onSave(value);
       setSearchVal(' ');
-      console.log('value :>> ', value);
+      onEnterPress(value);
     }
   };
 
