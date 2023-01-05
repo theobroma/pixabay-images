@@ -5,10 +5,11 @@ import { Box, Button, Grid } from '@mui/material';
 import { AppError } from '@/atoms/AppError/AppError';
 import { PageLoader } from '@/atoms/page-loader/page-loader';
 import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
+import { useEffectOnce } from '@/hooks/useEffectOnce';
 import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { picturesSelector } from '@/store/pictures/selectors';
-import { getPicturesTC } from '@/store/pictures/slice';
+import { getPicturesTC, resetPicturesStateAC } from '@/store/pictures/slice';
 
 export const SliceLoadMoreGallery = () => {
   const dispatch = useAppDispatch();
@@ -21,11 +22,17 @@ export const SliceLoadMoreGallery = () => {
     // isSuccess,
   } = useAppSelector(picturesSelector);
 
-  useNonInitialEffect(() => {
-    if (hits.length === 0) {
-      dispatch(getPicturesTC({ page: 1 }));
-    }
-  }, [dispatch]);
+  // useNonInitialEffect(() => {
+  //   if (hits.length === 0) {
+  //     dispatch(getPicturesTC({ page: 1 }));
+  //   }
+  // }, [dispatch]);
+
+  useEffectOnce(() => {
+    console.log('Triggered only once, on mount');
+    dispatch(resetPicturesStateAC());
+    dispatch(getPicturesTC({ page: 1 }));
+  });
 
   useEffect(() => {
     window.scrollTo({

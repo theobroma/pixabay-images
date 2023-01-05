@@ -63,6 +63,7 @@ export const picturesSlice = createSlice({
       state.data.hits = []; // clear
       state.pictureSearch = action.payload;
     },
+    resetPicturesStateAC: () => picturesInitialState,
   },
   extraReducers: (builder) => {
     builder
@@ -102,4 +103,5 @@ function isError(action: AnyAction) {
   return action.type.endsWith('rejected');
 }
 
-export const { setPictureSearchAC } = picturesSlice.actions;
+export const { setPictureSearchAC, resetPicturesStateAC } =
+  picturesSlice.actions;

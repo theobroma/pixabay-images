@@ -3,9 +3,10 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
 // import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
+import { useEffectOnce } from '@/hooks/useEffectOnce';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { picturesSelector } from '@/store/pictures/selectors';
-import { getPicturesTC } from '@/store/pictures/slice';
+import { getPicturesTC, resetPicturesStateAC } from '@/store/pictures/slice';
 
 export const SliceInfiniteScrollGallery = () => {
   const dispatch = useAppDispatch();
@@ -23,6 +24,11 @@ export const SliceInfiniteScrollGallery = () => {
   //       dispatch(getPicturesTC({ page: 1 }));
   //     }
   //   }, [dispatch]);
+
+  useEffectOnce(() => {
+    console.log('Triggered only once, on mount');
+    dispatch(resetPicturesStateAC());
+  });
 
   const handleLoadMore = () => {
     console.log('handleLoadMore :>> ', '=====');
