@@ -60,7 +60,7 @@ export const picturesSlice = createSlice({
   initialState: picturesInitialState,
   reducers: {
     setPictureSearchAC(state, action) {
-      state.data.hits = []; // clear
+      // state.data.hits = []; // clear
       state.pictureSearch = action.payload;
     },
     resetPicturesStateAC: () => picturesInitialState,

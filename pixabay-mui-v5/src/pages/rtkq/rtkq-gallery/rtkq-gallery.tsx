@@ -3,12 +3,15 @@ import { Grid } from '@mui/material';
 import { AppError } from '@/atoms/AppError/AppError';
 import { PageLoader } from '@/atoms/page-loader/page-loader';
 import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
+import { useAppSelector } from '@/store/configureStore';
 import { useGetPicturesQuery } from '@/store/pictures/api';
+import { picturesSelector } from '@/store/pictures/selectors';
 
 export const RtkqGallery = () => {
+  const { pictureSearch } = useAppSelector(picturesSelector);
   const { data, isError, isLoading, error } = useGetPicturesQuery({
     page: 1,
-    searchQuery: 'flower',
+    searchQuery: pictureSearch,
   });
   const hits = data?.hits;
 
