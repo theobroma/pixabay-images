@@ -10,11 +10,17 @@ export const picturesApi = createApi({
     baseUrl: API_URL,
   }),
   endpoints: (builder) => ({
-    getPictures: builder.query<PicturesDataResponseType, number>({
-      query: (page) => ({
-        url: `/?q=nature&image_type=photo&orientation=horizontal&per_page=12&page=${page}`,
-        method: 'get',
-      }),
+    getPictures: builder.query<
+      PicturesDataResponseType,
+      { page: number; searchQuery: string }
+    >({
+      query: (args) => {
+        const { page, searchQuery } = args;
+        return {
+          url: `/?q=${searchQuery}&image_type=photo&orientation=horizontal&per_page=12&page=${page}`,
+          method: 'get',
+        };
+      },
     }),
   }),
 });

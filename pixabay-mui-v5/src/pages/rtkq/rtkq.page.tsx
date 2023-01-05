@@ -1,15 +1,14 @@
 import { Container, Typography } from '@mui/material';
 
-import { AppSearch } from '@/components/AppSearch/AppSearch';
-
 import { RtkqGallery } from './rtkq-gallery/rtkq-gallery';
+import { RtqkSearch } from './rtqk-search/rtqk-search';
 
 const RTKQPage = () => (
   <Container maxWidth="lg">
     <Typography variant="h5" component="h2">
       RTKQPage
     </Typography>
-    <AppSearch />
+    <RtqkSearch />
     <RtkqGallery />
   </Container>
 );

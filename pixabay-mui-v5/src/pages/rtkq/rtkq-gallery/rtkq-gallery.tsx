@@ -6,7 +6,10 @@ import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
 import { useGetPicturesQuery } from '@/store/pictures/api';
 
 export const RtkqGallery = () => {
-  const { data, isError, isLoading, error } = useGetPicturesQuery(1);
+  const { data, isError, isLoading, error } = useGetPicturesQuery({
+    page: 1,
+    searchQuery: 'flower',
+  });
   const hits = data?.hits;
 
   return (
