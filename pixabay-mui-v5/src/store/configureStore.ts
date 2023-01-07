@@ -3,6 +3,7 @@ import { combineReducers, configureStore, Reducer } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { createLogger } from 'redux-logger';
 
+import { lightboxSlice } from './lightbox/slice';
 import { picturesApi } from './pictures/api';
 import { picturesSlice } from './pictures/slice';
 import { uiSlice } from './ui/slice';
@@ -13,10 +14,12 @@ const logger = createLogger({
 });
 
 const reducers = {
-  //   [modalSlice.name]: modalReducer,
+  // Slices
+  [lightboxSlice.name]: lightboxSlice.reducer,
   [picturesSlice.name]: picturesSlice.reducer,
-  [picturesApi.reducerPath]: picturesApi.reducer,
   [uiSlice.name]: uiSlice.reducer,
+  // API
+  [picturesApi.reducerPath]: picturesApi.reducer,
 };
 
 const combinedReducer = combineReducers<typeof reducers>(reducers);

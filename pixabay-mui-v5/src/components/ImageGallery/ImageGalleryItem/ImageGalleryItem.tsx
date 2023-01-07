@@ -6,6 +6,8 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 import { DialogDynamic } from '@/atoms/dialog/dialog';
+import { useAppDispatch } from '@/store/configureStore';
+import { setLightboxSlideAC } from '@/store/lightbox/slice';
 import { HitsEntityType } from '@/types';
 
 interface Props {
@@ -17,9 +19,18 @@ export const ImageGalleryItem = ({ hit }: Props) => {
     variant: 'dialog',
   });
 
+  const dispatch = useAppDispatch();
+  const handleClick = () => {
+    dispatch(setLightboxSlideAC(hit.id));
+  };
+
   return (
     <>
-      <ImageListItem key={hit.id} {...bindTrigger(popupState)}>
+      <ImageListItem
+        key={hit.id}
+        // {...bindTrigger(popupState)
+        onClick={handleClick}
+      >
         <img src={hit.webformatURL} alt={hit.tags} loading="lazy" />
         <ImageListItemBar
           title={hit.tags}
