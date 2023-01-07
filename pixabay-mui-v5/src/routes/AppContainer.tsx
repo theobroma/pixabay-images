@@ -22,6 +22,9 @@ const SliceInfiniteScrollPage = lazy(() =>
     MIN_LAZY_DELAY,
   ),
 );
+const LightboxPage = lazy(() =>
+  pMinDelay(import('@/pages/lightbox/lightbox.page'), MIN_LAZY_DELAY),
+);
 const RTKQPage = lazy(() =>
   pMinDelay(import('@/pages/rtkq/rtkq.page'), MIN_LAZY_DELAY),
 );
@@ -37,6 +40,7 @@ export const AppContainer = () => (
             path="slice-infinite-scroll"
             element={<SliceInfiniteScrollPage />}
           />
+          <Route path="light-box" element={<LightboxPage />} />
           <Route path="rtkq" element={<RTKQPage />} />
           <Route path="*" element={<div>Not Found</div>} />
         </Route>

@@ -19,6 +19,11 @@ export const NestedList = () => (
       icon={<LayersIcon />}
     />
     <ListItemLink
+      to="/light-box"
+      primary="Light Box"
+      icon={<WorkspacePremiumIcon />}
+    />
+    <ListItemLink
       to="/rtkq"
       primary="RTK Query"
       icon={<WorkspacePremiumIcon />}
