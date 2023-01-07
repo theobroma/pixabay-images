@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
 
 import { AppError } from '@/atoms/AppError/AppError';
+import { Lightbox } from '@/atoms/lightbox/lightbox';
 import { PageLoader } from '@/atoms/page-loader/page-loader';
 import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
 import { useAppSelector } from '@/store/configureStore';
@@ -18,6 +19,7 @@ export const RtkqGallery = () => {
   return (
     <>
       {isLoading && <PageLoader />}
+      {!!hits && <Lightbox hits={hits} />}
       {!!hits && <ImageGallery hits={hits} />}
       <Grid container spacing={2}>
         {/* error */}

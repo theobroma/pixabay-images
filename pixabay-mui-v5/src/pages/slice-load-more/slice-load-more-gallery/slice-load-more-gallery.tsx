@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import { Box, Button, Grid } from '@mui/material';
 
 import { AppError } from '@/atoms/AppError/AppError';
+import { Lightbox } from '@/atoms/lightbox/lightbox';
 import { PageLoader } from '@/atoms/page-loader/page-loader';
 import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
 import { useEffectOnce } from '@/hooks/useEffectOnce';
-import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
+// import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { picturesSelector } from '@/store/pictures/selectors';
 import { getPicturesTC, resetPicturesStateAC } from '@/store/pictures/slice';
@@ -56,6 +57,7 @@ export const SliceLoadMoreGallery = () => {
   return (
     <>
       {isLoading && <PageLoader />}
+      {!!hits && <Lightbox hits={hits} />}
       {!!hits && <ImageGallery hits={hits} />}
       <Grid container spacing={2}>
         {/* error */}
