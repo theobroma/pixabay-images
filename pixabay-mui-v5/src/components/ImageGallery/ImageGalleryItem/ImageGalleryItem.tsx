@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
-import { DialogDynamic } from '@/atoms/dialog/dialog-dynamic/dialog-dynamic';
+import { DialogDynamic } from '@/atoms/dialog/dialog';
 import { HitsEntityType } from '@/types';
 
 interface Props {
