@@ -15,6 +15,7 @@ export const DialogPopupState = () => {
   const popupState = usePopupState({
     variant: 'dialog',
   });
+
   return (
     <>
       <Button variant="contained" {...bindTrigger(popupState)}>
