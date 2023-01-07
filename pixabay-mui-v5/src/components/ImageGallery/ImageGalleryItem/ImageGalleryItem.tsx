@@ -7,7 +7,7 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 import { DialogDynamic } from '@/atoms/dialog/dialog';
 import { useAppDispatch } from '@/store/configureStore';
-import { setLightboxSlideAC } from '@/store/lightbox/slice';
+import { setLightboxAC } from '@/store/lightbox/slice';
 import { HitsEntityType } from '@/types';
 
 interface Props {
@@ -21,7 +21,7 @@ export const ImageGalleryItem = ({ hit }: Props) => {
 
   const dispatch = useAppDispatch();
   const handleClick = () => {
-    dispatch(setLightboxSlideAC(hit.id));
+    dispatch(setLightboxAC({ slide: 1, toggler: true }));
   };
 
   return (

@@ -9,11 +9,11 @@ export const lightboxSlice = createSlice({
   name: 'lightbox',
   initialState: lightboxInitialState,
   reducers: {
-    setLightboxSlideAC(state, action) {
-      state.toggler = true;
-      state.slide = action.payload;
+    setLightboxAC(state, action) {
+      state.toggler = action.payload.toggler;
+      state.slide = action.payload.slide;
     },
   },
 });
 
-export const { setLightboxSlideAC } = lightboxSlice.actions;
+export const { setLightboxAC } = lightboxSlice.actions;
