@@ -5,8 +5,9 @@ import { red } from '@mui/material/colors';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { useAppSelector } from '@/store/configureStore';
-import { themeSelector } from '@/store/ui/selectors';
+// import { useAppSelector } from '@/store/configureStore';
+// import { themeSelector } from '@/store/ui/selectors';
+import { ThemeEnum } from '@/enums/theme.enum';
 
 const FRONT_COLORS = {
   error: {
@@ -97,9 +98,16 @@ const themeMap = {
   pinkBlueGrey: PINK_BLUE_GREY_THEME,
 };
 
+// const themeMap = {
+//   [StatusEnum.Active]: ColorEnum.Success600,
+//   [StatusEnum.Warning]: ColorEnum.Tertiary600,
+//   [StatusEnum.Expired]: ColorEnum.Accent300,
+// };
+
 export const AppThemeProvider = ({ children }: PropsWithChildren) => {
-  const currentTheme = useAppSelector(themeSelector);
-  const theme = createTheme(themeMap[currentTheme]);
+  // const currentTheme = useAppSelector(themeSelector);
+  // const theme = createTheme(themeMap[currentTheme]);
+  const theme = createTheme(themeMap[ThemeEnum.LIGHT]);
 
   return (
     <ThemeProvider theme={theme}>

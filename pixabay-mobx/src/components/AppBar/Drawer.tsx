@@ -16,9 +16,7 @@ import { BackToTop } from '@/atoms/BackToTop/BackToTop';
 import { HideOnScroll } from '@/atoms/HideOnScroll/HideOnScroll';
 
 import { AppBar, DrawerHeader, drawerWidth, Main } from './Drawer.styled';
-import { LanguageMenu } from './LanguageMenu/LanguageMenu';
 import { NestedList } from './NestedList/NestedList';
-import { ThemeMenu } from './ThemeMenu/ThemeMenu';
 
 export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
   const theme = useTheme();
@@ -54,13 +52,11 @@ export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
               }}
             >
               <Typography variant="h6" noWrap component="div">
-                MovieDB App
+                Pixabay MobX
               </Typography>
             </RouterLink>
             <Box sx={{ flexGrow: 1 }} />
-            {/* Menus */}
-            <LanguageMenu />
-            <ThemeMenu />
+            {/* Menus go here... */}
           </Toolbar>
         </AppBar>
       </HideOnScroll>

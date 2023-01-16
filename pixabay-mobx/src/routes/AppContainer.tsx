@@ -1,6 +1,6 @@
 import pMinDelay from 'p-min-delay';
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { PageLoader } from '@/atoms/page-loader/page-loader';
 
