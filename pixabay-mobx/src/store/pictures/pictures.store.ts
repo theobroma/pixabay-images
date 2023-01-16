@@ -7,6 +7,7 @@ import { SnapshotOrInstance, types } from 'mobx-state-tree';
 
 export const UserStore = types.model('User', {
   //   data: UserModel,
+  data: types.array(types.string),
   isLoading: types.boolean,
   error: types.maybeNull(types.string),
 });
@@ -19,4 +20,5 @@ export const initialUserStore: SnapshotOrInstance<typeof UserStore> = {
   isLoading: false,
   error: null,
   //   data: initialUserModel,
+  data: [],
 };

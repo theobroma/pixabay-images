@@ -13,15 +13,7 @@ export const usePicturesSelector = (): any =>
   // ]
 
   {
-    const {
-      // data,
-      isLoading,
-      error,
-    } = useStore().user;
+    const { data, isLoading, error } = useStore().user;
 
-    return [
-      // data,
-      isLoading,
-      error,
-    ];
+    return [data, isLoading, error];
   };
