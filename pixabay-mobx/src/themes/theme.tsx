@@ -92,17 +92,11 @@ const PINK_BLUE_GREY_THEME = {
 };
 
 const themeMap = {
-  light: LIGHT_THEME,
-  dark: DARK_THEME,
-  deepPurpleAmber: DEEP_PURPLE_AMBER_THEME,
-  pinkBlueGrey: PINK_BLUE_GREY_THEME,
+  [ThemeEnum.LIGHT]: LIGHT_THEME,
+  [ThemeEnum.DARK]: DARK_THEME,
+  [ThemeEnum.DEEP_PURPLE_AMBER]: DEEP_PURPLE_AMBER_THEME,
+  [ThemeEnum.PINK_BLUE_GREY_THEME]: PINK_BLUE_GREY_THEME,
 };
-
-// const themeMap = {
-//   [StatusEnum.Active]: ColorEnum.Success600,
-//   [StatusEnum.Warning]: ColorEnum.Tertiary600,
-//   [StatusEnum.Expired]: ColorEnum.Accent300,
-// };
 
 export const AppThemeProvider = ({ children }: PropsWithChildren) => {
   // const currentTheme = useAppSelector(themeSelector);
