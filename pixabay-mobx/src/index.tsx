@@ -4,9 +4,10 @@ import { createRoot } from 'react-dom/client';
 import { SnackBarProvider } from './components/SnackBar/SnackBarProvider';
 import { AppContainer } from './routes/AppContainer';
 import * as serviceWorker from './serviceWorker';
+import { StoreProvider } from './store/store.context';
 import { AppThemeProvider } from './themes/theme';
-import './index.css';
 
+import './index.css';
 // Open Source fonts
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -18,11 +19,13 @@ const root = createRoot(container);
 
 root.render(
   <StrictMode>
-    <AppThemeProvider>
-      <SnackBarProvider>
-        <AppContainer />
-      </SnackBarProvider>
-    </AppThemeProvider>
+    <StoreProvider>
+      <AppThemeProvider>
+        <SnackBarProvider>
+          <AppContainer />
+        </SnackBarProvider>
+      </AppThemeProvider>
+    </StoreProvider>
   </StrictMode>,
 );
 
