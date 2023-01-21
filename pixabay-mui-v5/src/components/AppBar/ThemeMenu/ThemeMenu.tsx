@@ -11,7 +11,7 @@ import { useNonInitialEffect } from '@/hooks/useNonInitialEffect';
 import { useAppDispatch, useAppSelector } from '@/store/configureStore';
 import { themeSelector } from '@/store/ui/selectors';
 import { setThemeAC } from '@/store/ui/slice';
-import { ThemeOptionInterface } from '@/types';
+import { BaseOptionInterface } from '@/types';
 
 import { themeOptions } from './ThemeMenu.options';
 
@@ -25,7 +25,7 @@ export const ThemeMenu = () => {
 
   const handleMenuItemClick = (
     event: React.MouseEvent<HTMLElement>,
-    value: ThemeOptionInterface['value'],
+    value: BaseOptionInterface['value'],
   ) => {
     dispatch(setThemeAC(value));
     setAnchorEl(null);
@@ -40,7 +40,10 @@ export const ThemeMenu = () => {
   };
 
   useNonInitialEffect(() => {
-    enqueueSnackbar(`Theme changed to ${currentTheme}`, {
+    const labelText = themeOptions.find(
+      ({ value }) => value === currentTheme,
+    )?.label;
+    enqueueSnackbar(`Theme changed to ${labelText}`, {
       variant: 'warning',
     });
   }, [enqueueSnackbar, currentTheme]);
@@ -71,7 +74,8 @@ export const ThemeMenu = () => {
           {option.value === currentTheme ? (
             <RadioButtonCheckedIcon
               fontSize="small"
-              style={{ marginRight: '8px', color: option.iconColor }}
+              color="primary"
+              style={{ marginRight: '8px' }}
             />
           ) : (
             <RadioButtonUncheckedIcon
@@ -91,7 +95,7 @@ export const ThemeMenu = () => {
         <IconButton
           size="large"
           edge="end"
-          aria-label="account of current user"
+          aria-label="theme"
           aria-controls={menuId}
           aria-haspopup="true"
           onClick={handleProfileMenuOpen}

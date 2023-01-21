@@ -1,23 +1,17 @@
-import { ThemeColorsEnum } from '@/types';
+import { ThemeEnum } from '@/enums/theme.enum';
 
-import { setThemeAC, uiSlice } from './slice';
+import { setThemeAC, uiSlice, uiInitialState } from './slice';
 
 const uiReducer = uiSlice.reducer;
 
 describe('counter reducer sync actions', () => {
-  const initialState = {
-    theme: ThemeColorsEnum.LIGHT,
-  };
-
   it('should handle initial state', () => {
-    expect(uiReducer(undefined, { type: 'unknown' })).toEqual({
-      theme: ThemeColorsEnum.LIGHT,
-    });
+    expect(uiReducer(undefined, { type: 'unknown' })).toEqual(uiInitialState);
   });
 
   it('should handle setTheme', () => {
-    const newTheme = ThemeColorsEnum.DARK;
-    const actual = uiReducer(initialState, setThemeAC(newTheme));
+    const newTheme = ThemeEnum.Dark;
+    const actual = uiReducer(uiInitialState, setThemeAC(newTheme));
     expect(actual.theme).toEqual(newTheme);
   });
 });

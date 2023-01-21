@@ -1,25 +1,21 @@
-import { ColorEnum } from '@/enums/color.enum';
-import { ThemeOptionInterface, ThemeColorsEnum } from '@/types';
+import { ThemeEnum } from '@/enums/theme.enum';
+import { BaseOptionInterface } from '@/types';
 
-export const themeOptions: ThemeOptionInterface[] = [
+export const themeOptions: BaseOptionInterface[] = [
   {
-    value: ThemeColorsEnum.LIGHT,
+    value: ThemeEnum.Light,
     label: 'Light',
-    iconColor: ColorEnum.LightPrimaryMain,
   },
   {
-    value: ThemeColorsEnum.DARK,
+    value: ThemeEnum.Dark,
     label: 'Dark',
-    iconColor: ColorEnum.DarkPrimaryMain,
   },
   {
-    value: ThemeColorsEnum.DEEP_PURPLE_AMBER,
+    value: ThemeEnum.DeepPurpleAmber,
     label: 'Deep Purple Amber',
-    iconColor: ColorEnum.DeepPurplePrimaryMain,
   },
   {
-    value: ThemeColorsEnum.PINK_BLUE_GREY_THEME,
+    value: ThemeEnum.PinkBlueGreyTheme,
     label: 'Pink Blue Grey',
-    iconColor: ColorEnum.PinkBluePrimaryMain,
   },
 ];
