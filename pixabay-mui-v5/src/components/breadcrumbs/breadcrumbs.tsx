@@ -1,26 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { Container } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link, { LinkProps } from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
-const breadcrumbNameMap: { [key: string]: string } = {
-  '/slice-load-more': 'Slice Load More',
-  '/slice-infinite-scroll': 'Slice Infinite Scroll',
-  '/light-box': 'Light Box',
-  '/rtkq': 'RTKQ',
-};
-
-interface LinkRouterProps extends LinkProps {
-  to: string;
-  replace?: boolean;
-}
-
-const LinkRouter = (props: LinkRouterProps) => {
-  return <Link {...props} component={RouterLink as any} />;
-};
+import { breadcrumbNameMap } from './breadcrumbs.map';
+import { LinkRouter } from './link-router/link-router';
 
 export const AppBreadcrumbs = () => {
   const location = useLocation();
