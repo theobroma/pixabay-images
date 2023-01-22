@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 
 import { BackToTop } from '@/atoms/BackToTop/BackToTop';
 import { HideOnScroll } from '@/atoms/HideOnScroll/HideOnScroll';
+import { AppBreadcrumbs } from '@/components/breadcrumbs/breadcrumbs';
 
 import { AppBar, DrawerHeader, drawerWidth, Main } from './Drawer.styled';
 import { NestedList } from './NestedList/NestedList';
@@ -91,6 +92,7 @@ export const PersistentDrawerLeft = ({ children }: PropsWithChildren) => {
       <Main open={isOpen}>
         {/* anchor for BackToTop */}
         <DrawerHeader id="back-to-top-anchor" />
+        <AppBreadcrumbs />
         {children}
       </Main>
     </Box>
