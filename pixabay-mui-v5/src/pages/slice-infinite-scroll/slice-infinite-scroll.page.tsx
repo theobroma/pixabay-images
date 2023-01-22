@@ -7,7 +7,7 @@ import { SliceInfiniteScrollGallery } from './slice-infinite-scroll-gallery/slic
 const SliceInfiniteScrollPage = () => (
   <Container maxWidth="lg">
     <Typography variant="h5" component="h2">
-      Slice Version
+      Slice Infinite Scroll
     </Typography>
     <AppSearch />
     <SliceInfiniteScrollGallery />

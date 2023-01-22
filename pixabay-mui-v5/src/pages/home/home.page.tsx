@@ -1,10 +1,12 @@
-import { Container, Box } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 import { NestedList } from '@/components/AppBar/NestedList/NestedList';
 
 const HomePage = () => (
   <Container maxWidth="lg">
-    <Box>HomePage</Box>
+    <Typography variant="h5" component="h2">
+      Home
+    </Typography>
     <NestedList />
   </Container>
 );

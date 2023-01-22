@@ -6,7 +6,7 @@ import { RtqkSearch } from './rtqk-search/rtqk-search';
 const RTKQPage = () => (
   <Container maxWidth="lg">
     <Typography variant="h5" component="h2">
-      RTKQPage
+      RTKQ
     </Typography>
     <RtqkSearch />
     <RtkqGallery />

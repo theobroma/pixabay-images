@@ -6,7 +6,7 @@ import { SliceLoadMoreSearch } from './slice-load-more-search/slice-load-more-se
 const SliceLoadMorePage = () => (
   <Container maxWidth="lg">
     <Typography variant="h5" component="h2">
-      Slice Version
+      Slice Load More
     </Typography>
     <SliceLoadMoreSearch />
     <SliceLoadMoreGallery />

@@ -1,10 +1,12 @@
-import { Container, Box } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 import { LightboxGallery } from './lightbox-gallery/lightbox-gallery';
 
 const LightboxPage = () => (
   <Container maxWidth="lg">
-    <Box>LightboxPage</Box>
+    <Typography variant="h5" component="h2">
+      Lightbox
+    </Typography>
     <LightboxGallery />
   </Container>
 );
