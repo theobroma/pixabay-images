@@ -1,14 +1,14 @@
-import { useCountries } from '@/entities/images/hooks/useCountries';
+import { useImages } from '@/entities/images/hooks/use-images';
 import { ImageGallery } from '@/entities/images/ui/image-gallery/image-gallery';
 
 export const HomePictures = () => {
-  const { isLoading, countries } = useCountries();
+  const { isLoading, images } = useImages();
   // console.log('countries :>> ', countries);
 
   return (
     <div>
       <span>sdfsdf</span>
-      {countries && <ImageGallery hits={countries.data.hits} />}
+      {images && <ImageGallery hits={images.data.hits} />}
     </div>
   );
 };
