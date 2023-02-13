@@ -22,7 +22,6 @@
     "@types/react": "^18.x",
     "@types/react-dom": "^18.x",
     "axios": "^1.3.2",
-    "axios-case-converter": "^0.11.1",
     "compose-function": "^3.0.3",
     "notistack": "^2.0.8",
     "p-min-delay": "^4.0.2",
