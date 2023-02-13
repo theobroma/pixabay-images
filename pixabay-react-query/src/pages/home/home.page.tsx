@@ -1,11 +1,13 @@
 import { Container } from '@mui/material';
 
-import { QueryExample } from './query-example/query-example';
+import { HomePictures } from './home-pictures/home-pictures';
+// import { QueryExample } from './query-example/query-example';
 
 const HomePage = () => (
   <Container maxWidth="lg">
     <span>HomePage</span>
-    <QueryExample />
+    {/* <QueryExample /> */}
+    <HomePictures />
   </Container>
 );
 
