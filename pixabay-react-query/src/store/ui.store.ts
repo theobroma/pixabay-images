@@ -1,21 +1,22 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
-interface BearState {
-  bears: number;
-  //   increasePopulation: (by: number) => void;
-  increasePopulation: any;
+import { ThemeEnum } from '@/enums/theme.enum';
+
+interface UIState {
+  theme: ThemeEnum;
+  setTheme: any;
 }
 
-export const useBearStore = create<BearState>()(
+export const useUIStore = create<UIState>()(
   devtools(
     (set) => ({
-      bears: 997755,
-      increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-      removeAllBears: () => set({ bears: 0 }),
+      theme: ThemeEnum.Light,
+      setTheme: (newTheme: ThemeEnum) => set((state) => ({ theme: newTheme })),
+      resetTheme: () => set((state) => ({ theme: ThemeEnum.Light })),
     }),
     {
-      name: 'bear-storage',
+      name: 'ui-storage',
     },
   ),
 );

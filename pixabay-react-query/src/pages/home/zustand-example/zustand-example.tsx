@@ -1,8 +1,9 @@
-import { useBearStore } from '@/store/ui.store';
+import { useBearStore } from '@/store/bear.store';
 
 export const ZustandExample = () => {
   const increasePopulation = useBearStore((state) => state.increasePopulation);
   const bears = useBearStore((state) => state.bears);
+
   return (
     <>
       <button type="button" onClick={increasePopulation}>
