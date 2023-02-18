@@ -5,10 +5,5 @@ export const HomePictures = () => {
   const { isLoading, images } = useImages();
   // console.log('countries :>> ', countries);
 
-  return (
-    <div>
-      <span>sdfsdf</span>
-      {images && <ImageGallery hits={images.data.hits} />}
-    </div>
-  );
+  return <div>{images && <ImageGallery hits={images.data.hits} />}</div>;
 };
