@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { ThemeEnum } from '@/enums/theme.enum';
+import { useUIStore } from '@/store/ui.store';
 // import { useAppSelector } from '@/store/configureStore';
 // import { themeSelector } from '@/store/ui/selectors';
 
@@ -99,9 +100,10 @@ const themeMap = {
 };
 
 const AppThemeProvider = ({ children }: PropsWithChildren) => {
+  const currentTheme = useUIStore((state) => state.theme);
   // const currentTheme = useAppSelector(themeSelector);
-  // const theme = createTheme(themeMap[currentTheme]);
-  const theme = createTheme(themeMap[ThemeEnum.Light]);
+  const theme = createTheme(themeMap[currentTheme]);
+  // const theme = createTheme(themeMap[ThemeEnum.Light]);
 
   return (
     <ThemeProvider theme={theme}>

@@ -7,7 +7,11 @@ export const ThemeExample = () => {
 
   return (
     <div>
-      <button type="button" onClick={setTheme(ThemeEnum.DeepPurpleAmber)}>
+      <button
+        type="button"
+        onClick={() => setTheme(ThemeEnum.Dark)}
+        //  onClick={setTheme(ThemeEnum.DeepPurpleAmber)}
+      >
         set theme Dark
       </button>
       <span>currentTheme:&nbsp;{currentTheme}</span>
