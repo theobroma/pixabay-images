@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { MainPage } from '@/pages/main/main.page';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
@@ -16,7 +17,7 @@ const Application = () => (
   <QueryClientProvider client={queryClient}>
     <ReactQueryDevtools initialIsOpen={false} />
     <Suspense fallback={<>spinner</>}>
-      Application
+      <MainPage />
       {/* <RouterProvider router={router} /> */}
     </Suspense>
   </QueryClientProvider>
