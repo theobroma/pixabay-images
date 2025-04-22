@@ -6,7 +6,10 @@ module.exports = {
   tabWidth: 2,
   endOfLine: 'auto',
   // Since prettier 3.0, manually specifying plugins is required
-  plugins: ['@ianvs/prettier-plugin-sort-imports'],
+  plugins: [
+    '@ianvs/prettier-plugin-sort-imports',
+    'prettier-plugin-tailwindcss', // MUST come last
+  ],
   // This plugin's options
   importOrder: [
     '^react$',
