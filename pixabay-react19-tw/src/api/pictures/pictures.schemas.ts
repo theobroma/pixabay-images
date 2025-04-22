@@ -9,11 +9,11 @@ export const HitEntitySchema = z.object({
   imageHeight: z.number(),
   imageSize: z.number(),
   imageWidth: z.number(),
-  largeImageURL: z.string(),
+  largeImageUrl: z.string(),
   likes: z.number(),
   pageURL: z.string(),
   previewHeight: z.number(),
-  previewURL: z.string(),
+  previewUrl: z.string(),
   previewWidth: z.number(),
   tags: z.string(),
   type: z.string(),
@@ -22,7 +22,7 @@ export const HitEntitySchema = z.object({
   userImageURL: z.string(),
   views: z.number(),
   webformatHeight: z.number(),
-  webformatURL: z.string(),
+  webformatUrl: z.string(),
   webformatWidth: z.number(),
 });
 export type HitEntityType = z.infer<typeof HitEntitySchema>;
