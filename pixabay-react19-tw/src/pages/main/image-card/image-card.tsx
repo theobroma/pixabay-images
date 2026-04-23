@@ -11,7 +11,7 @@ export const ImageCard = ({ hit }: ImageCardProps) => {
     <div className="max-w-sm overflow-hidden rounded shadow-lg">
       <img src={hit.webformatUrl} alt="" className="w-full" />
       <div className="px-6 py-4">
-        <div className="mb-2 text-xl font-bold text-purple-500">Photo by {hit.user}</div>
+        <div className="mb-2 text-xl font-bold text-purple-500">{hit.name}</div>
         <ul>
           <li>
             <strong>Views: </strong>
