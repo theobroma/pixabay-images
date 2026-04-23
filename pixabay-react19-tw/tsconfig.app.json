@@ -22,9 +22,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     /* Imports */
-    "baseUrl": "src",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["./src/*"],
+      "#/*": ["./lib/*"]
     }
   },
   "include": ["src"]
